@@ -99,6 +99,7 @@ A guide to render bokeh images by Blender 2.93
 由于 Blender 的 Python 环境与我们一般使用的 Anaconda 环境不通用，为了后续 Python 脚本的正常运行，还需要安装 cv2 包。参见 [https://blender.stackexchange.com/questions/5287/using-3rd-party-python-modules#](https://blender.stackexchange.com/questions/5287/using-3rd-party-python-modules#)
 
 > - 在 Blender 的 Scripting 工作区的控制台中（控制台如下图所示，注意在编写代码时，鼠标需要保持在当前面板之内），输入
+> 
 > ```python
 > >>> import python
 > >>> sys.exec_prefix
@@ -106,6 +107,7 @@ A guide to render bokeh images by Blender 2.93
 > ```
 >
 > - 在 Linux 或 Windows 命令行界面输入（注意第一行要加 bin）
+> 
 > ```
 > > cd /PATH_TO_BLENDER_PYTHON/bin
 > > ./python -m ensurepip

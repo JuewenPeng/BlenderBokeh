@@ -8,7 +8,9 @@ A guide to render bokeh images by Blender 2.93
 
 &emsp;&emsp; [1.2. 基础操作及快捷键](#Sec.1.2)
 
-&emsp;&emsp; [1.3. 界面常用按钮介绍](#Sec.1.3)
+&emsp;&emsp; [1.3. 高阶操作](#Sec.1.3)
+
+&emsp;&emsp; [1.4. 界面常用按钮介绍](#Sec.1.4)
 
 [2. Python 脚本](#Sec.2)
 
@@ -55,7 +57,19 @@ A guide to render bokeh images by Blender 2.93
  ![image](https://user-images.githubusercontent.com/38718148/159126141-fabd43c7-630f-493f-8b39-394a4e3a5f5f.png)
 
 <span id="Sec.1.3"></span>
-## 1.3. 界面常用按钮介绍（仅限脚本相关）
+## 1.3. 高阶操作
+
+下面介绍一个稍微复杂一点的操作：调整相机的拍摄视角
+
+1. 按小键盘 0，进入相机当前拍摄视角
+2. 按 N，打开右侧工具栏，点击 视图 -> 视图锁定 -> 打开**锁定相机到视图方位**
+3. 此时，可以使用对拍摄视角进行旋转（鼠标中建 或 Alt+鼠标左键）和平移（Shift+鼠标中键 或 Alt+Shift+鼠标左键）
+4. 调整好后，关闭右侧工具栏中的**锁定相机到视图方位**
+
+![image](https://user-images.githubusercontent.com/38718148/159154284-8df92098-3e8d-453e-b836-d6429b82909e.png)
+
+<span id="Sec.1.4"></span>
+## 1.4. 界面常用按钮介绍（仅限脚本相关）
 
 - **工作区 Compositing**：设置后处理的节点；**工作区 Scripting**：通常包含文本编辑器和 Python 控制台，可编写 Python 脚本；**最右侧加号**：添加新的工作区
 
@@ -121,7 +135,11 @@ A guide to render bokeh images by Blender 2.93
 <span id="Sec.2.2"></span>
 ## 2.2. 脚本使用
 
-可以在 Scripting 工作区中新建脚本，复制以下代码并运行。注意更改保存路径。为了加速渲染过程，可适当调整光线采样数量 bpy.context.scene.cycles.samples。程序运行过程中整个界面是卡死的，要想终止程序，只能强行关闭 Blender
+- 为了确保脚本正确运行，需要提前用鼠标点击一下**相机**，将其设置为活跃对象（可能存在多个相机，选择渲染过程对应的相机，即按**小键盘 0** 场景对应的相机）
+
+![image](https://user-images.githubusercontent.com/38718148/159153839-dbb36adf-6439-487b-b6b3-8cbd26ef71c3.png)
+
+- 在 Scripting 工作区或其他含有文本编辑器的工作区中新建脚本，复制以下代码并运行。注意更改保存路径。为了加速渲染过程，可适当调整光线采样数量 bpy.context.scene.cycles.samples。程序运行过程中整个界面是卡死的，要想终止程序，只能强行关闭 Blender
 
 ```python
 # This script works well for Blender 2.93
@@ -236,6 +254,11 @@ info_json = json.dumps(info_dict, sort_keys=False, indent=4, separators=(',', ':
 f = open(os.path.join(save_root, 'info.json'), 'w')
 f.write(info_json)
 ```
+
+- 若程序报错可按下图操作查看报错信息
+
+![image](https://user-images.githubusercontent.com/38718148/159153954-decf2359-441e-4896-ac56-5afd37528ca2.png)
+
 
 <span id="Sec.2.3"></span>
 ## 2.3. 脚本图文说明

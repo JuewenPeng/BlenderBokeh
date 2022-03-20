@@ -111,7 +111,7 @@ A guide to render bokeh images by Blender 2.93
 > ```
 > > cd /PATH_TO_BLENDER_PYTHON/bin
 > > ./python -m ensurepip
-> > ./python -m pip install opencv-python==4.5.2.54 （最新版本无法打开 .exr 格式图片）
+> > ./python -m pip install opencv-python==4.5.4.60（若后续运行脚本时无法打开 .exr 格式图片，可更换 cv2 版本）
 > ```
 >
 > - 安装好后回到 Blender 控制台，输入 import cv2 看是否安装成功
